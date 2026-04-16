@@ -1,142 +1,173 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>THE OC</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>THE OC</title>
 
-    <style>
+<style>
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    justify-content: center;
+    padding: 40px 20px;
+    background: #f4f6f8;
+    color: #333;
+}
+
+/* CARD */
+.profile-card {
+    width: 100%;
+    max-width: 650px;
+    background: #fff;
+    border: 1px solid #ddd;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+/* TOP SECTION */
+.top-section {
+    display: flex;
+    padding: 20px;
+    border-bottom: 1px solid #eee;
+    align-items: center;
+}
+
+.main-pfp {
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 20px;
+    border: 2px solid #ddd;
+}
+
+.header-text h1 {
+    font-size: 1.3rem;
+    margin-bottom: 8px;
+    color: #222;
+}
+
+.header-text p {
+    margin: 4px 0;
+    font-size: 0.92rem;
+}
+
+/* LISTS */
+.lists-container {
+    display: flex;
+    border-bottom: 1px solid #eee;
+}
+
+.list-box {
+    flex: 1;
+    padding: 18px;
+}
+
+.list-box:first-child {
+    border-right: 1px solid #eee;
+}
+
+h3 {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 12px;
+    color: #555;
+}
+
+/* TABLE */
+.row {
+    padding: 18px;
+    border-bottom: 1px solid #eee;
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.85rem;
+    min-width: 500px;
+}
+
+th, td {
+    border-bottom: 1px solid #eee;
+    padding: 8px;
+    text-align: left;
+}
+
+th {
+    background: #fafafa;
+    font-weight: 600;
+}
+
+/* CONTACT */
+.row-contact {
+    display: flex;
+    justify-content: space-around;
+    padding: 18px;
+    background: #fafafa;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.row-contact div {
+    text-align: center;
+    transition: 0.2s ease;
+}
+
+.row-contact div:hover {
+    transform: translateY(-3px);
+}
+
+.row-contact a {
+    text-decoration: none;
+    color: #333;
+    font-size: 0.8rem;
+}
+
+.row-contact img {
+    display: block;
+    margin: 0 auto 6px;
+    opacity: 0.85;
+    transition: 0.2s ease;
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 700px) {
+
     body {
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        display: flex;
-        justify-content: center;
-        padding: 40px 20px;
-        background: #f4f6f8;
-        color: #333;
+        padding: 20px 10px;
     }
 
-    /* CARD */
-    .profile-card {
-        width: 100%;
-        max-width: 650px;
-        background: #fff;
-        border: 1px solid #ddd;
-        box-shadow: 0 10px 25px rgba(0,0,0,0.08);
-        display: flex;
-        flex-direction: column;
-        border-radius: 10px;
-        overflow: hidden;
-    }
-
-    /* TOP SECTION */
     .top-section {
-        display: flex;
-        padding: 20px;
-        border-bottom: 1px solid #eee;
-        align-items: center;
+        flex-direction: column;
+        text-align: center;
     }
 
     .main-pfp {
-        width: 110px;
-        height: 110px;
-        border-radius: 50%;
-        object-fit: cover;
-        margin-right: 20px;
-        border: 2px solid #ddd;
+        margin-right: 0;
+        margin-bottom: 15px;
     }
 
-    .header-text h1 {
-        font-size: 1.3rem;
-        margin-bottom: 8px;
-        color: #222;
-    }
-
-    .header-text p {
-        margin: 4px 0;
-        font-size: 0.92rem;
-    }
-
-    /* LISTS */
     .lists-container {
-        display: flex;
-        border-bottom: 1px solid #eee;
-    }
-
-    .list-box {
-        flex: 1;
-        padding: 18px;
+        flex-direction: column;
     }
 
     .list-box:first-child {
-        border-right: 1px solid #eee;
-    }
-
-    h3 {
-        font-size: 0.85rem;
-        text-transform: uppercase;
-        letter-spacing: 1px;
-        margin-bottom: 12px;
-        color: #555;
-    }
-
-    /* TABLE */
-    .row {
-        padding: 18px;
+        border-right: none;
         border-bottom: 1px solid #eee;
     }
 
     table {
-        width: 100%;
-        border-collapse: collapse;
-        font-size: 0.85rem;
+        min-width: 600px;
     }
+}
 
-    th, td {
-        border-bottom: 1px solid #eee;
-        padding: 8px;
-        text-align: left;
-    }
-
-    th {
-        background: #fafafa;
-        font-weight: 600;
-    }
-
-    /* CONTACT */
-    .row-contact {
-        display: flex;
-        justify-content: space-around;
-        padding: 18px;
-        background: #fafafa;
-    }
-
-    .row-contact div {
-        text-align: center;
-        transition: 0.2s ease;
-    }
-
-    .row-contact div:hover {
-        transform: translateY(-3px);
-    }
-
-    .row-contact a {
-        text-decoration: none;
-        color: #333;
-        font-size: 0.8rem;
-    }
-
-    .row-contact img {
-        display: block;
-        margin: 0 auto 6px;
-        opacity: 0.85;
-        transition: 0.2s ease;
-    }
-
-    .row-contact div:hover img {
-        opacity: 1;
-    }
-    </style>
-
+</style>
 </head>
 
 <body>
@@ -144,7 +175,7 @@
 <div class="profile-card">
 
     <div class="top-section">
-        <img src="charles.JPG" alt="THE OC" class="main-pfp">
+        <img src="charles.jpeg" class="main-pfp">
 
         <div class="header-text">
             <h1>Personal Information</h1>
@@ -189,7 +220,7 @@
     <div class="row">
         <h3>Time Table</h3>
 
-        <table border="1">
+        <table>
             <tr>
                 <th>Day</th>
                 <th>Course</th>
